@@ -1,11 +1,16 @@
+import { useState } from 'react';
 import dropdownArrow from '../assets/dropdown-arrow.svg'
 
 function Dropdown(props) {
     const { title, elements } = props
+    const [isOpen, setIsOpen] = useState(false);
 
-    let Elements = null
+    const handleClick = () => {
+        setIsOpen(!isOpen);
+    };
+
+    let Elements = [];
     if (typeof elements === 'object') {
-        Elements = [];
         Object.values(elements).forEach((element, index) => {
             Elements.push(<li key={index}>{element}</li>)
         });
@@ -19,26 +24,20 @@ function Dropdown(props) {
             <div className="dropdown-header">
             <div className="dropdown-header-overlay" onClick={handleClick}></div>
                 <span>{title}</span>
-                <img src={dropdownArrow} alt="" />
+                <img src={dropdownArrow} className={isOpen ? 'show' : ''} alt="" />
             </div>
 
-            <div className="dropdown-list">
+            <div className={isOpen ? 'dropdown-list show' : 'dropdown-list'}>
                 <ul>
-                    {Elements}
+                    {Elements.length < 1 ? (
+                      <li>Aucun élément à afficher.</li>
+                    ) : (
+                      Elements
+                    )}
                 </ul>
             </div>
         </div>
     )
-}
-
-/* Function allowing the display of dropdown information. */
-function handleClick(event) {
-    const dropdownContainer = event.target.parentElement.parentElement
-    const dropdownList = dropdownContainer.getElementsByClassName('dropdown-list')[0]
-    const toggle = dropdownContainer.getElementsByTagName('img')[0]
-    
-    dropdownList.classList.toggle('show')
-    toggle.classList.toggle('show')
 }
 
 export default Dropdown

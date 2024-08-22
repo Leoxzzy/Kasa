@@ -9,23 +9,30 @@ function Carousel(props) {
     const [currentSlide, setIndex] = useState(0)
 
     useEffect(() => {
-        refreshSlideIndication(currentSlide + 1, pictures.length)
-    })
+        if (pictures.length > 1) {
+            refreshSlideIndication(currentSlide + 1, pictures.length)
+        }
+    }, [])
 
     return (
         <div className="carousel">
-            <div className="carousel-arrow">
-                <button onClick={() => setIndex(prevPicture(currentSlide, pictures))}><img src={arrowLeft} alt="Flèche de sélection d'image précédente." /></button>
-                <button onClick={() => setIndex(nextPicture(currentSlide, pictures))}><img src={arrowRight} alt="Flèche de sélection d'image suivante." /></button>
-            </div>
+
+            {pictures.length > 1 && (
+                <div className="carousel-arrow">
+                    <button onClick={() => setIndex(prevPicture(currentSlide, pictures))}><img src={arrowLeft} alt="Flèche de sélection d'image précédente." /></button>
+                    <button onClick={() => setIndex(nextPicture(currentSlide, pictures))}><img src={arrowRight} alt="Flèche de sélection d'image suivante." /></button>
+                </div>
+            )}
 
             <div className="carousel-pictures">
                 <img src={pictures[currentSlide]} alt="Image de présentation de l'appartement sélectionné." />
             </div>
 
-            <div className='carousel-slideIndication'>
-                <span></span>
-            </div>
+            {pictures.length > 1 && (
+                <div className='carousel-slideIndication'>
+                    <span></span>
+                </div>
+            )}
         </div>
     );
 }

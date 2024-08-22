@@ -1,8 +1,15 @@
 function Banner(props) {
+    const {title, cover} = props
+
     return (
         <div className="banner">
-            <h1>{props.title}</h1>
-            <img src={props.cover} alt="Montagnes en bord de mer."/>
+            {title && (
+                <div className="banner-title">
+                    <h1>{title}</h1>
+                </div>
+            )}
+
+            <img src={cover} alt="Montagnes en bord de mer."/>
         </div>
     )
 }

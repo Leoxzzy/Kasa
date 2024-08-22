@@ -73,6 +73,7 @@
         &.show {
             transform: translateY(0px);
             max-height: 10000px;
+            margin-bottom: 16px;
             opacity: 1;
             transition: 250ms ease-in;
         }
