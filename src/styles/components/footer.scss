@@ -1,0 +1,42 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: black;
+    width: 100%;
+    height: 209px;
+    margin-top: 45px;
+
+    img {
+        margin-top: 66px;
+        width: 122px;
+        height: 39.44px;
+    }
+
+    p {
+        margin-top: 28.56px;
+        margin-bottom: 29px;
+        color: white;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 34.22px;
+        text-align: center;
+    }
+
+    @media (max-width: 400px) {
+        img {
+            width: 122px;
+            height: 39.44px;
+        }
+
+        p {
+            width: 133.59px;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 17.11px;
+            text-align: center;
+        }
+    }
+}

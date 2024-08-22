@@ -1,0 +1,41 @@
+.lodging-list {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+
+    background: #F6F6F6;
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+
+    box-sizing: border-box;
+    padding: 50px;
+    /* z-index: -2; */
+
+    @media (max-width: 1305px) {
+        height: auto;
+
+        .lodging-card {
+            width: 440px;
+        }
+    }
+
+    @media (max-width: 1095px) {
+        .lodging-card {
+            width: 45%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        background: none;
+        padding: 0;
+
+        .lodging-card {
+            width: 100%;
+        }
+    }
+}   

@@ -1,0 +1,94 @@
+.carousel {
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    max-width: 1240px;
+    height: 415px;
+    border-radius: 25px;
+
+    .carousel-arrow {
+        position: absolute;
+        z-index: 2;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        padding-left: 23.36px;
+        padding-right: 23.36px;
+        width: 100%;
+        height: 100%;
+
+        button {
+            background: none;   
+            border: none;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        img {
+            width: 46.68px;
+            height: 79.2px;                
+        }
+    }
+
+    .carousel-pictures {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* display: none; */
+            
+            &.active {
+                display: flex;
+            }
+        }
+    }
+
+    .carousel-slideIndication {
+        position: absolute;
+        top: 0;
+
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+
+        span {
+            font-family: Montserrat;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 25.67px;
+            color: white;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .carousel-arrow {
+            padding-left: 2.10px;
+            padding-right: 2.10px;
+
+            img {
+                width: 35px;
+                height: 35px;                
+            }
+        }
+
+        .carousel-slideIndication {
+            display: none;
+        }
+    }
+}

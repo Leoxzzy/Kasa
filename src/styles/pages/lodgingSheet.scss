@@ -1,0 +1,42 @@
+.lodgingSheet {
+    display: flex;
+    flex-direction: column;
+
+    gap: 50px;
+    width: 95%;
+    height: 100%;
+    max-width: 1240px;
+
+    .lodgingSheet-details {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .lodgingSheet-dropdown {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 76px;
+        width: 100%;
+    }
+
+    @media (max-width: 768px) {    
+        .lodgingSheet-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: unset;
+            width: 100%;
+        }
+    
+        .lodgingSheet-dropdown {
+            display: flex;
+            flex-direction: column;
+            justify-content: unset;
+            gap: 0;
+            width: 100%;
+        }
+    
+    }
+}

@@ -1,0 +1,31 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* COMPONENTS */
+@import './components/header.scss';
+@import './components/banner.scss';
+@import './components/lodging.scss';
+@import './components/lodging-list.scss';
+@import './components/footer.scss';
+@import './components/dropdown.scss';
+@import './components/carousel.scss';
+@import './components/lodgingDetails.scss';
+@import './components/lodgingHost.scss';
+
+/* PAGES */
+@import './pages/home.scss';
+@import './pages/about.scss';
+@import './pages/notfound.scss';
+@import './pages/lodgingSheet.scss';
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+* {
+    font-family: 'Montserrat';
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
