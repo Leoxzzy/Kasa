@@ -21,8 +21,15 @@
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
 
+html, body {
+    width: 100%;
+    height: 100%;
+  }
+
 * {
     font-family: 'Montserrat';
+    margin: 0;
+    padding: 0;
 }
 
 #root {
@@ -32,4 +39,5 @@ $breakpoint-desktop: 1024px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }

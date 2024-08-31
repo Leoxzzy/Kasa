@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 /* Importing images of carousel selection arrows */
 import arrowLeft from '../assets/carousel-arrows/chevron-left-solid.svg';
@@ -7,12 +7,6 @@ import arrowRight from '../assets/carousel-arrows/chevron-right-solid.svg';
 function Carousel(props) {
     const { pictures } = props;
     const [currentSlide, setIndex] = useState(0)
-
-    useEffect(() => {
-        if (pictures.length > 1) {
-            refreshSlideIndication(currentSlide + 1, pictures.length)
-        }
-    }, [])
 
     return (
         <div className="carousel">
@@ -25,12 +19,12 @@ function Carousel(props) {
             )}
 
             <div className="carousel-pictures">
-                <img src={pictures[currentSlide]} alt="Image de présentation de l'appartement sélectionné." />
+                <img src={pictures[currentSlide]} alt="Présentation de l'appartement sélectionné." />
             </div>
 
             {pictures.length > 1 && (
                 <div className='carousel-slideIndication'>
-                    <span></span>
+                    <span>{currentSlide + 1} / {pictures.length}</span>
                 </div>
             )}
         </div>
@@ -47,7 +41,6 @@ function prevPicture(currentSlide, pictures) {
         index = index - 1
     }
 
-    refreshSlideIndication(index + 1, pictures.length)
     return index
 }
 
@@ -60,12 +53,7 @@ function nextPicture(currentSlide, pictures) {
         index = index + 1
     }
 
-    refreshSlideIndication(index + 1, pictures.length)
     return index
-}
-
-function refreshSlideIndication(currentSlide, maxSlide) {
-    document.querySelector('.carousel-slideIndication').getElementsByTagName('span')[0].textContent = `${currentSlide}/${maxSlide}`
 }
 
 export default Carousel;
