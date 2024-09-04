@@ -1,11 +1,16 @@
 .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 95%;
     max-width: 1240px;
-    height: 100%;
-    
+    height: 270%;
+   
     .sections {
         display: flex;
         flex-direction: column;
+        width: 90%;
+        max-width: 1000px;
         margin-top: 38px;
     }
 }

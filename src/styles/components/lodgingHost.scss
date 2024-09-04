@@ -1,6 +1,7 @@
 .lodging-host {
     display: flex;
     flex-direction: column;
+    align-items: end;
 
     .host {
         display: flex;
@@ -56,6 +57,18 @@
 
         .host {
             margin-bottom: 0;
+        }
+    }
+
+    @media (max-width: 301px) {
+        justify-content: unset;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 24px;
+
+        .host span {
+            width: auto;
+            height: auto;
         }
     }
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import dropdownArrow from '../assets/dropdown-arrow.svg'
+import collapseArrow from '../assets/collapse-arrow.svg'
 
-function Dropdown(props) {
+function Collapse(props) {
     const { title, elements } = props
     const [isOpen, setIsOpen] = useState(false);
 
@@ -20,14 +20,14 @@ function Dropdown(props) {
     }
 
     return (
-        <div className="dropdown">
-            <div className="dropdown-header">
-            <div className="dropdown-header-overlay" onClick={handleClick}></div>
+        <div className="collapse">
+            <div className="collapse-header">
+            <div className="collapse-header-overlay" onClick={handleClick}></div>
                 <span>{title}</span>
-                <img src={dropdownArrow} className={isOpen ? 'show' : ''} alt="" />
+                <img src={collapseArrow} className={isOpen ? 'show' : ''} alt="" />
             </div>
 
-            <div className={isOpen ? 'dropdown-list show' : 'dropdown-list'}>
+            <div className={isOpen ? 'collapse-list show' : 'collapse-list'}>
                 <ul>
                     {Elements.length < 1 ? (
                       <li>Aucun élément à afficher.</li>
@@ -40,4 +40,4 @@ function Dropdown(props) {
     )
 }
 
-export default Dropdown
+export default Collapse

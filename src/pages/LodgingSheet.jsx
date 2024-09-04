@@ -6,7 +6,10 @@ import { useParams } from "react-router-dom";
 import Carousel from "../components/carousel"
 import LodgingDetails from "../components/lodging-details";
 import LodgingHost from "../components/lodging-host";
-import Dropdown from "../components/dropdown";
+import Collapse from "../components/collapse";
+
+/* PAGE */
+import NotFound from "./notfound";
 
 
 function LodgingSheet() {
@@ -25,30 +28,36 @@ function LodgingSheet() {
                     if (element.id === id) { return setData(element); }
                     return element
                 })
+
                 setLoading(false);
             })
             .catch((error) => {
                 console.error(error)
             })
-    }, [])
+    }, [id])
     
     if (loading) return null;
 
-    return (
-        <main className="lodgingSheet">
-            <Carousel pictures={data.pictures}/>
-
-            <div className="lodgingSheet-details">
-                <LodgingDetails title={data.title} location={data.location} filters={data.tags}/>
-                <LodgingHost host={data.host}  rating={data.rating} />
-            </div>
-
-            <div className="lodgingSheet-dropdown">
-                <Dropdown title="Description" elements={data.description} />
-                <Dropdown title="Équipements" elements={data.equipments} />
-            </div>
-        </main>
-    )
+    if (!data) {
+        return (<NotFound />)
+    
+    } else {
+        return (
+            <main className="lodgingSheet">
+                <Carousel pictures={data.pictures}/>
+    
+                <div className="lodgingSheet-details">
+                    <LodgingDetails title={data.title} location={data.location} filters={data.tags}/>
+                    <LodgingHost host={data.host}  rating={data.rating} />
+                </div>
+    
+                <div className="lodgingSheet-collapse">
+                    <Collapse title="Description" elements={data.description} />
+                    <Collapse title="Équipements" elements={data.equipments} />
+                </div>
+            </main>
+        )
+    }
 }
 
 export default LodgingSheet

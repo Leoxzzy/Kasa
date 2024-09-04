@@ -1,4 +1,4 @@
-.dropdown {
+.collapse {
     display: flex;
     flex-direction: column;
 
@@ -6,7 +6,7 @@
     height: auto;
     overflow: hidden;
 
-   .dropdown-header {
+   .collapse-header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -22,7 +22,7 @@
         position: relative;
 
 
-        .dropdown-header-overlay {
+        .collapse-header-overlay {
             position: absolute;
             z-index: 3;
             width: 100%;
@@ -39,17 +39,17 @@
         }
 
         img {
-            transform: rotate(180deg);
+            transform: rotate(0deg);
             transition: 150ms ease-in;
-
+            
             &.show {
-                transform: rotate(0deg);
+                transform: rotate(180deg);
                 transition: 150ms ease-out;
             }
         }
    }
 
-   .dropdown-list {
+   .collapse-list {
         box-sizing: border-box;
         background-color: #F6F6F673;
         width: 100%;

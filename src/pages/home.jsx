@@ -25,7 +25,7 @@ function Home() {
             .catch((error) => {
                 console.error(error)
             })
-    })
+    }, [])
 
     if (loading) { return null }
 
